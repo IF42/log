@@ -23,6 +23,9 @@ struct Log
 };
 
 
+/**
+** @brief Log level constants
+*/
 typedef enum
 {
     Debug
@@ -32,6 +35,9 @@ typedef enum
 }LogLevel;
 
 
+/**
+** @brief Log level string labels used in logging functions
+*/
 const char * log_level_label[LogLevelNumber] =
 {
     "Debug"
@@ -122,6 +128,7 @@ log_error(
     , char * format
     , ...)
 {
+    if(log->quiet == false)
     {
         va_list p;
         va_start(p, format);

@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -Wextra -pedantic -std=c18 -O2 
+CFLAGS=-Wall -Wextra -pedantic -std=c18 -O3 
 LIBS=
 
 INCLUDE_PATH=/usr/include
