@@ -78,7 +78,7 @@ What to log</h1>
 <p >In general is necessary to log everything what helps to solve occurred problems or find source of the issue. That are usually input and output events which are very often source of an issue. Next importent place to logging are main loops of program and state machines where are states transitions and wehere is possible to occure potentional unexpected behaves.</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
 Tutorial</h1>
-<p >Target platforms are Linux or Window with MSYS system, or it is possible to use simply two source file copy pased into project. For build log library simply call make command: </p><div class="fragment"><div class="line">$ make</div>
+<p >Target platforms are Linux or Window with MSYS system, or it is possible to use simply two source files copy pased into project. For build log library simply call make command: </p><div class="fragment"><div class="line">$ make</div>
 <div class="line">$ make test</div>
 <div class="line">$ sudo make install INCLUDE_PATH=/usr/include/ LIB_PATH=/usr/lib/</div>
 </div><!-- fragment --><p> <a class="el" href="structLog.html">Log</a> library not opening or closing output streams for writing logging messages. This must be solved outside of the library. On the other hand this gives flexibility for registering of output logging streams. First of all is needed to prepare output streams. This could be file output or terminal output streams. </p><div class="fragment"><div class="line">#include &lt;stdio.h&gt;</div>

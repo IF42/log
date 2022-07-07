@@ -12,7 +12,7 @@ Logging can be divided to so called levels. Logging levels are logging outputs w
 In general is necessary to log everything what helps to solve occurred problems or find source of the issue. That are usually input and output events which are very often source of an issue. Next importent place to logging are main loops of program and state machines where are states transitions and wehere is possible to occure potentional unexpected behaves. 
 
 # Tutorial
-Target platforms are Linux or Window with MSYS system, or it is possible to use simply two source file copy pased into project. For build log library simply call make command:
+Target platforms are Linux or Window with MSYS system, or it is possible to use simply two source files copy pased into project. For build log library simply call make command:
 ```
 $ make
 $ make test
