@@ -1,36 +1,33 @@
-#include <stdlib.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 #include "../src/log.h"
 
 
-int 
+int
 main(void)
 {
-    FILE * f_log = fopen("test_log.log", "w");
-    Log * log = log_new(2, (FILE* []){stdout, f_log});
+    FILE * log_file = fopen("log_file.log", "w");
 
-    if(log == NULL)
-    {
-        fprintf(stderr, "log_new NULL pointer returned!\n");
+    if(log_file == NULL)
         return EXIT_FAILURE;
+
+    Log * log = log_new(2, (FILE*[2]) {stdout, log_file});
+
+    if(log != NULL)
+    {
+        log_debug(log, "This is debug logging message");
+        log_warning(log, "This is warning logging message");
+        log_error(log, "This is error logging message");
+
+        log_set_quiet(log, true);
+
+        if(log_is_quiet(log) == true)
+            printf("Log is now off\n");
+
+        log_delete(log);
     }
 
-    log_warning(log, "This is warning test with values: %d", 42);
-    log_error(log, "This is error test with values: %s", "Warning msg");
-
-    log_set_quiet(log, true);
-
-    log_debug(log, "Log is off");
-    
-    if(log_is_quiet(log) == true)
-        printf("Log is off\n");
-    
-    log_delete(log);
-    fclose(f_log);
-    
-    printf("Test exit success\n");
+    fclose(log_file);
 
     return EXIT_SUCCESS;
 }
-

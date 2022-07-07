@@ -1,5 +1,7 @@
 release
 *.log
+*~
+*.swp
 
 # Prerequisites
 *.d

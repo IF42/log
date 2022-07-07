@@ -185,6 +185,8 @@ _log_process(
         fprintf(log->f_list[i], "%s [%s] - ", _log_current_time(), log_level);
         vfprintf(log->f_list[i], format, iter);
         fprintf(log->f_list[i], "\n");
+        
+        fflush(log->f_list[i]);
     }
 
     pthread_mutex_unlock(&log->lock);

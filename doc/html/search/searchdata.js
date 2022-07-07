@@ -1,12 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "l",
+  0: "cl",
   1: "l",
   2: "l",
   3: "l",
   4: "l",
   5: "l",
-  6: "l"
+  6: "l",
+  7: "c"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "functions",
   4: "variables",
   5: "typedefs",
-  6: "enums"
+  6: "enums",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "Functions",
   4: "Variables",
   5: "Typedefs",
-  6: "Enumerations"
+  6: "Enumerations",
+  7: "Pages"
 };
 
