@@ -46,8 +46,9 @@ const char * log_level_label[LogLevelNumber] =
 };
 
 
-static char *
-_log_current_time();
+
+char *
+_log_time_stamp();
 
 
 static void
@@ -182,7 +183,7 @@ _log_process(
         va_list iter;
         va_copy(iter, *p);
 
-        fprintf(log->f_list[i], "%s [%s] - ", _log_current_time(), log_level);
+        fprintf(log->f_list[i], "%s [%s] - ", _log_time_stamp(), log_level);
         vfprintf(log->f_list[i], format, iter);
         fprintf(log->f_list[i], "\n");
         
@@ -193,26 +194,26 @@ _log_process(
 }
 
 
-static char *
-_log_current_time()
+char *
+_log_time_stamp()
 {
     static char str_time[128] = {0};
-
-    time_t rawtime;
-    struct tm * timeinfo;
+    time_t raw_time;
+    struct tm * timeinfo; 
+   
+    time(&raw_time);
+    timeinfo = localtime(&raw_time);
     
-    time(&rawtime);
-    timeinfo = localtime(&rawtime);
-    
-    sprintf(
+    snprintf(
         str_time
-        , "%d.%d.%d - %d:%d:%d"
+        , 128
+        , "%02d-%02d-%d %02d:%02d:%02d"
         , timeinfo->tm_mday
         , timeinfo->tm_mon + 1
         , timeinfo->tm_year + 1900
         , timeinfo->tm_hour
         , timeinfo->tm_min
         , timeinfo->tm_sec);
-
+    
     return str_time;
 }

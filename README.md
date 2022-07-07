@@ -63,9 +63,9 @@ main(void)
 Output of this code is:
 
 ```
-7.7.2022 - 12:29:19 [Debug] - Log init success
-7.7.2022 - 12:29:19 [Debug] - This is debug logging message
-7.7.2022 - 12:29:19 [Warning] - This is warning logging message
-7.7.2022 - 12:29:19 [Error] - This is error logging message
+07-07-2022 12:29:19 [Debug] - Log init success
+07-07-2022 12:29:19 [Debug] - This is debug logging message
+07-07-2022 12:29:19 [Warning] - This is warning logging message
+07-07-2022 12:29:19 [Error] - This is error logging message
 Log is now off
 ```
