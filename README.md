@@ -13,13 +13,13 @@ In general is necessary to log everything what helps to solve occurred problems 
 
 # Tutorial
 Target platforms are Linux or Window with MSYS system, or it is possible to use simply two source files copy pased into project. For build log library simply call make command:
-```
-$ make
-$ make test
-$ sudo make install INCLUDE_PATH=/usr/include/ LIB_PATH=/usr/lib/
+```sh
+make
+make test
+sudo make install INCLUDE_PATH=/usr/include/ LIB_PATH=/usr/lib/
 ```
 Log library not opening or closing output streams for writing logging messages. This must be solved outside of the library. On the other hand this gives flexibility for registering of output logging streams. First of all is needed to prepare output streams. This could be file output or terminal output streams. 
-```
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <log.h>
