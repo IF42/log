@@ -197,7 +197,7 @@ _log_process(
 char *
 _log_time_stamp()
 {
-    static char str_time[128] = {0};
+    static char str_time[42] = {0};
     time_t raw_time;
     struct tm * timeinfo; 
    
@@ -206,7 +206,7 @@ _log_time_stamp()
     
     snprintf(
         str_time
-        , 128
+        , 41
         , "%02d-%02d-%d %02d:%02d:%02d"
         , timeinfo->tm_mday
         , timeinfo->tm_mon + 1
