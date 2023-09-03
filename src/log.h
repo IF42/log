@@ -30,8 +30,8 @@ typedef struct Log Log;
 */
 Log *
 log_new(
-    size_t f_list_length
-    , FILE * f_list[f_list_length]);
+    size_t length
+    , FILE * stream[length]);
 
 
 /**
